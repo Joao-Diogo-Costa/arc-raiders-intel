@@ -35,6 +35,10 @@ const typeStyles = {
   },
 };
 
+// Diz ao Next.js: "Mantém esta página em cache por 60 segundos. 
+// Se alguém visitar depois disso, vai buscar dados novos ao Supabase."
+export const revalidate = 60;
+
 export default async function Home() {
   // Fetch the latest published patch and its changes from Supabase
   const { data: latestPatch, error } = await supabase

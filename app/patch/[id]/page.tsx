@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { MoveUp, MoveDown, Wrench, Sparkles } from "lucide-react";
 
+export const revalidate = 60;
+export const dynamicParams = true; // (Já é true por defeito, mas fica explícito)
+
 // Se tiveres um ficheiro de tipos, podes importar, senão define aqui para despistar erros
 interface PatchChange {
   id: string;
