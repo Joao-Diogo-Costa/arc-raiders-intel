@@ -4,6 +4,7 @@ import { supabase } from "@/lib/supabase";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MoveUp, MoveDown, Wrench, Sparkles } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Define the shape of your data (TypeScript best practice)
 interface PatchChange {
