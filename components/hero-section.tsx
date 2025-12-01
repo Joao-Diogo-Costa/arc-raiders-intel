@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Radio, Crosshair } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -58,19 +59,21 @@ export function HeroSection() {
         </p>
 
         {/* CTA Button */}
-        <Button
-          size="lg"
-          className="group relative bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 tracking-wider uppercase transition-all duration-300"
-        >
-          <Crosshair className="w-5 h-5 mr-3 group-hover:animate-spin" />
-          View Latest Changes
-          <ChevronDown className="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform" />
-          {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary-foreground/50" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-primary-foreground/50" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary-foreground/50" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary-foreground/50" />
-        </Button>
+        <Link href="#patch-note">
+          <Button
+            size="lg"
+            className="group relative bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 tracking-wider uppercase transition-all duration-300"
+          >
+            <Crosshair className="w-5 h-5 mr-3 group-hover:animate-spin" />
+            View Latest Changes
+            <ChevronDown className="w-5 h-5 ml-3 group-hover:translate-y-1 transition-transform" />
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary-foreground/50" />
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-primary-foreground/50" />
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary-foreground/50" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary-foreground/50" />
+          </Button>
+        </Link>
 
         {/* Version tag */}
         <div className="mt-16 font-mono text-xs text-muted-foreground">
