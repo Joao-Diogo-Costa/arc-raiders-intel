@@ -7,7 +7,6 @@ import { MoveUp, MoveDown, Wrench, Sparkles } from "lucide-react";
 export const revalidate = 60;
 export const dynamicParams = true; // (Já é true por defeito, mas fica explícito)
 
-// Se tiveres um ficheiro de tipos, podes importar, senão define aqui para despistar erros
 interface PatchChange {
   id: string;
   entity_name: string;
@@ -26,19 +25,17 @@ const typeStyles = {
   nerf: { icon: <MoveDown className="w-4 h-4 text-red-500" /> },
   fix: { icon: <Wrench className="w-4 h-4 text-blue-500" /> },
   new: { icon: <Sparkles className="w-4 h-4 text-yellow-500" /> },
-  adjustment: { icon: <Wrench className="w-4 h-4 text-orange-500" /> }, // Adicionei adjustment por segurança
+  adjustment: { icon: <Wrench className="w-4 h-4 text-orange-500" /> }, 
 };
 
-// --- A MUDANÇA CRÍTICA ESTÁ AQUI EM BAIXO ---
 
-// 1. O tipo de params tem de ser Promise
+ 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
 export default async function PatchPage({ params }: PageProps) {
   
-  // 2. Tens OBRIGATORIAMENTE de fazer 'await' antes de usar o 'id'
   const { id } = await params;
 
   const { data: patch } = await supabase
@@ -51,7 +48,6 @@ export default async function PatchPage({ params }: PageProps) {
     notFound(); 
   }
 
-  // Ordenar mudanças (opcional, mas boa prática de UI)
   const changes = patch.patch_changes as PatchChange[];
 
   return (
