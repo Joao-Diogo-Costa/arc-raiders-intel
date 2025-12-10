@@ -1,4 +1,4 @@
-# ARC Raiders Intel
+# ARC Raiders Intel ( [arc-raiders-intel.vercel.app](https://arc-raiders-intel.vercel.app/) )
 
 ARC Raiders Intel is a web application dedicated to providing the latest news, patch notes, and intelligence for the game ARC Raiders. Stay up-to-date with the latest developments and gain a competitive edge with our comprehensive database of information.
 
